@@ -1,0 +1,11 @@
+
+En la primera regla  p#normal{}  se establece que el párrafo que a su vez tenga 
+como atributo id="normal" va a tener las caracteristicas del texto establecidas
+en dicha declaración como font-size: 11px; por ejemplo.
+
+En la regla número dos se establece que cualquier elemento que tenga como atributo
+id="destacado" tendrá un estilo de borde azul de 2px.
+Así sucede con el segundo párrafo y con la tabla en el documento html.
+
+En la última regla -> #distinto establece un estilo para aquel elemento que utilice
+el atributo id="distinto" como sucede con el último párrafo.
