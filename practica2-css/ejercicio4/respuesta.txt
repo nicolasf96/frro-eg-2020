@@ -1,0 +1,24 @@
+En la primera declaracion de estilo tenemos que el color de texto será verde y se aplicará
+a todos los elementos, y además tenemos la declaración que los elementos p (párrafo)
+serán font-family: arial, tamaño 10px y de color negro.
+
+En el primer ejemplo podemos observar que estas declaraciones no se cumplen, y es debido
+a la especifidad. 
+"Especificidad es la manera mediante la cual los navegadores deciden qué valores
+de una propiedad CSS son más relevantes para un elemento y, 
+por lo tanto, serán aplicados. 
+La especificidad está basada en las reglas de coincidencia que están compuestas 
+por diferentes tipos de selectores CSS."
+
+El párrafo del primer ejemplo tiene un atributo class="contenido"el cuál tiene más relevancia
+para el navegador y por lo tanto va a "entender" que ésta es la declaración que debe
+aplicar en el elemento y no la declaración de texto verde ni tampoco la que aplica a los p.
+En cambio el tetxo de la tabla es verde porque se le aplica la primera declaración y no tiene
+otra declaración con mayor importancia que aplique.
+
+En el ejemplo 2 Sucede que el body tiene el atributo class="contenido" por lo que 
+todos los elementos que se encuentran dentro de él heredan las propiedades referidas
+al texto, como color, font-weight, etc.
+Debido a esto es que la tabla hereda el color verde, y además por el body, su font-weight: bold
+y font-size: 14px.
+Al p se le aplica la propiedad de que se le aplica a todos los p.

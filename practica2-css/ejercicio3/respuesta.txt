@@ -1,0 +1,16 @@
+Las declaraciones en el documento ejercicio3.css
+indican los estilos del documento ejercicio3.html.
+
+La primera declaracion establece que el elemento que cumpla con
+la condición de ser un elemento p (párrafo) y que además
+tenga un atributo class="quitar" tendrá el texto de color rojo.
+
+La segunda declaración establece que el texto de cualquier elemento
+que tenga un atributo class="desarrollo" será de tamaño: 8px.
+
+Y el elemento que contenga el atributo class="importante" tendrá
+un tamaño de texto de 20px.
+
+Además se pueden aplicar dos clases en un mismo elemento, como
+sucede con el último párrafo y el resultado será un combinación
+de ambas clases.
