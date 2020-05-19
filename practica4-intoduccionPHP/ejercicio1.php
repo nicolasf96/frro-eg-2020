@@ -22,10 +22,10 @@ $c = 'xyz';         # Variable c de tipo string - Las comillas simples no detect
 $d = 12;            # Variables d de tipo integer
 
 
-echo gettype($a);   # Funcion gettype() - devuelve el tipo de dato de la variable a = // echo - muestra el resultado de la funcion
-echo gettype($b);   # Funcion gettype() - devuelve el tipo de dato de la variable b // echo - muestra el resultado de la funcion
-echo gettype($c);   # Funcion gettype() - devuelve el tipo de dato de la variable c // echo - muestra el resultado de la funcion
-echo gettype($d);   # Funcion gettype() - devuelve el tipo de dato de la variable d // echo - muestra el resultado de la funcion
+echo gettype($a)." ";   # Funcion gettype() - devuelve el tipo de dato de la variable a = boolean // echo - muestra el resultado de la funcion
+echo gettype($b)." ";   # Funcion gettype() - devuelve el tipo de dato de la variable b = string // echo - muestra el resultado de la funcion
+echo gettype($c)." ";   # Funcion gettype() - devuelve el tipo de dato de la variable c = string // echo - muestra el resultado de la funcion
+echo gettype($d)." ";   # Funcion gettype() - devuelve el tipo de dato de la variable d = integer // echo - muestra el resultado de la funcion
 
 
 if (is_int($d)) {   # Estructura de control if - Función is_int (devuelve true si el parámetro $d es int)
@@ -34,14 +34,13 @@ $d += 4;            # Operador binario - Suma el número 4 a la variable $d
 
 
 if (is_string($a)) {    # Estructura de control if - Función is_string (devuelve true si el parámetro $a es un string)
-echo "Cadena: $a";      # Muestra en pantalla: "Cadena: $a" Sustituyendo $a por su valor si es string
+echo "Cadena: $a";      # No Muestra nada en pantalla
 }
-
 
 $d = $a ? ++$d : $d*3;  # Operador ternario
 $f = doble($d++);       # Asigna a la variable $f el resultado de la ejecución de la función doble()
 $g = $f += 10;          
-echo $a, $b, $c, $d, $f , $g;
-
+echo "\n a = ".$a."\n b = " .$b."\n c = ". $c."\n d = ". $d."\n f = ". $f."\n g = ". $g;
+# a= 1 ; b = xyz; c = xyz; d = 18; f = 44; g = 44;
 
 ?>
