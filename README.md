@@ -2,7 +2,9 @@
 Repositorio de práctica Entornos Gráficos 2020 (UTN frro)
 COM: 4E03
 
-TRABAJO GRUPAL - INTEGRANTES:
+## Integrantes del grupo
 
-NICOLÁS FIERRO - LEG: 43908
-GONZALO MONJA - LEG: 43917
+| Miembros| Legajo|E-mail|
+| ----- | ---- | ---- |
+| Fierro Nicolás | 43908 | nicofierro1@gmail.com |
+| Monja Gonzalo  | 43917 | gonzalormonja@gmail.com |
