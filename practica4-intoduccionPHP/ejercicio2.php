@@ -66,7 +66,7 @@ echo"  <br />   <br />";
 
 
 # c) -------------------------------------------------------------------------------------
-
+#Todos los fragmentos de codigo son equivalentes.
 echo "C)   <br /> <br />";
 
 $i = 0;
