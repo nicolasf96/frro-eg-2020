@@ -26,7 +26,7 @@ return true;
 
 */
 for($i=0;$i<=20;$i++){
-    $nombre_test=substr(str_shuffle("01234+5678+9abcdefgh+ijklmnopqrstu&vwxyz+ABCDEFGHIJK+LMNOPQRS$TUV+WXYZ"), 0,$i);
-    echo "El nombre de usuario ".$nombre_test." es ".(comprobar_nombre_usuario($nombre_test)) ? "correcto" : "incorrecto";
+    $nombre_test=substr(str_shuffle("01234+5678+9abcdefgh+ijklmnopqrstu&vwxyz+ABCDEFGHIJK+LMNOPQRS%TUV+WXYZ"), 0,$i);
+    echo "El nombre de usuario ".$nombre_test." es ".(comprobar_nombre_usuario($nombre_test)) ? "correcto <br>" : "incorrecto <br>";
 }
 ?>
