@@ -5,6 +5,7 @@
 # A) -------------------------------------------------------------------------------------
 
 # Todos los fragmentos de código son equivalentes
+# Aunque estén codificados de distintas maneras todos imprimen el mismo resultado en pantalla
 
 echo" Ejercicio 2 <br /> <br /> a)   <br /> <br />";
 
@@ -67,7 +68,7 @@ echo"  <br />   <br />";
 
 # c) -------------------------------------------------------------------------------------
 
-echo "C)   <br /> <br />";
+echo "c)   <br /> <br />";
 
 $i = 0;
 
