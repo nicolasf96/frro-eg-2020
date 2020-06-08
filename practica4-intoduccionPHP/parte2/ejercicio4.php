@@ -3,7 +3,7 @@
 # Ejercicio 4:
 # Analizar la siguiente función, y escribir un script para probar su funcionamiento:
 
-/*
+
 
 function comprobar_nombre_usuario($nombre_usuario){
 //compruebo que el tamaño del string sea válido.
@@ -24,6 +24,6 @@ echo $nombre_usuario . " es válido<br>";
 return true;
 }
 
-*/
+
 
 ?>
