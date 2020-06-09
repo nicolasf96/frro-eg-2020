@@ -4,10 +4,6 @@
 # Ejercicio 4:
 # Analizar la siguiente función, y escribir un script para probar su funcionamiento:
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 9f99bd132f11a765083becc3f7d42020d91246f4
 
 function comprobar_nombre_usuario($nombre_usuario){
     //compruebo que el tamaño del string sea válido.
@@ -28,10 +24,6 @@ function comprobar_nombre_usuario($nombre_usuario){
     return true;
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 9f99bd132f11a765083becc3f7d42020d91246f4
 
 for($i=0;$i<=20;$i++){
     $nombre_test=substr(str_shuffle("01234+5678+9abcdefgh+ijklmnopqrstu&vwxyz+ABCDEFGHIJK+LMNOPQRS%TUV+WXYZ"), 0,$i);
