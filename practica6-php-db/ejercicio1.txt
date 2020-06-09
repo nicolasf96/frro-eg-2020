@@ -1,0 +1,70 @@
+Consulta a una base de datos: Para comenzar la comunicación con un servidor de base de datos MySQL, es
+necesario abrir una conexión a ese servidor.
+
+1) Para inicializar esta conexión, PHP ofrece la función:
+
+    $nombreConexion = mysqli_connect();
+
+2) Todos sus parámetros son opcionales, pero hay tres de ellos que generalmente son necesarios:
+
+    $hostname , $nombreUsuario , $contraseña
+
+3) Una vez abierta la conexión, se debe seleccionar una base de datos para su uso, mediante la función:
+
+    mysqli_select_db (mysql_select_db)
+
+4) Esta función debe pasar como parámetro:
+
+    $nombreConexión, $nombreBaseDatos
+
+5) La función mysqli_query () se utiliza para:
+
+    mysqli_query (mysql_query)- Esta función nos permite ejecutar una consulta
+    a la base de datos que especifiquemos.
+
+6) y requiere como parámetros:
+
+    $nombreConexion, $query
+
+7) La cláusula or die() se utiliza para:
+
+    Capturar el error
+
+8) y la función mysqli_error () se puede usar para:
+
+    Devuelve el último mensaje de error para la llamada más reciente
+    a una función de MySQLi que puede haberse ejecutado correctamente o haber fallado.
+
+
+9) Si la función mysqli_query() es exitosa, el conjunto resultante retornado
+se almacena en una variable, por ejemplo $vResult,
+y a continuación se puede ejecutar el siguiente código (explicarlo):
+
+------------------------------------------------
+<?php
+while ($fila = mysqli_fetch_array($vResultado))
+{
+?>
+<tr>
+ <td><?php echo ($fila[0]); ?></td>
+ <td><?php echo ($fila[1]); ?></td>
+ <td><?php echo ($fila[2']); ?></td>
+</tr>
+<tr>
+ <td colspan="5">
+<?php
+}
+mysqli_free_result($vResultado);
+mysqli_close($link);
+?>
+------------------------------------------------
+
+$fila= mysqli_fetch_array($vResultado); indica que los valores existentes en la fila se introduzcan en
+un array cuyos índices en principio pueden ser tanto asociativos (el nombre de la columna) como
+numéricos (empezando por cero).
+
+En el trozo de código donde está definida la <tr> tableRow, hay 3 celdas donde cada una muestra el contenido
+de la fila en la posición 1, 2 y 3 utilizando la variable $fila[i].
+
+la función mysqli_free_result -> Libera la memoria asociada al resultado.
+la función mysqli_close($link) -> Cierra la conexión a la base de datos.
