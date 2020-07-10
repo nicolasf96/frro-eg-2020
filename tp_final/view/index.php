@@ -1,0 +1,1 @@
+<a href="<?php echo $helper->url("usuarios","logout")?>">Cerrar session</a>
