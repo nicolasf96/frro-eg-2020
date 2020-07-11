@@ -27,19 +27,48 @@ class EntidadBase{
         return $resultSet;
     }
     public function getBy($column,$value){
-        $query = $this->db->query("SELECT * FROM $this->table WHERE $column='$value'");
-        while($row=$query->fetch_object()){
-            $resultSet[]=$row;
+        $sql = "SELECT * FROM $this->table WHERE ";
+        foreach($column as $i=>$c){
+            $sql .= " $c='".$value[$i]."' AND";  
         }
-        return $resultSet;
+        $sql =explode(" ",$sql);
+        unset($sql[count($sql)-1]);
+        $sql = implode(" ",$sql);
+        $query = $this->db->query($sql);
+        return $this->generateResp($query);
     }
     public function deleteById($id){
         $query=$this->db->query("DELETE FROM $this->table WHERE id=$id");
         return $query;
     }
     public function deleteBy($column,$value){
-        $query=$this->db->query("DELETE FROM $this->table WHERE $column='$value'");
+        $sql = "DELETE FROM $this->table WHERE ";
+        foreach($column as $i=>$c){
+            $sql .= " $c='".$value[$i]."' AND";  
+        }
+        $sql =explode(" ",$sql);
+        unset($sql[count($sql)-1]);
+        $sql = implode(" ",$sql);
+        $query=$this->db->query($sql);
         return $query;
+    }
+    private function generateResp($query){
+        if($query==true){
+            if($query->num_rows>1){
+                while($row = $query->fetch_object()) {
+                    $resultSet[]=$row;
+                 }
+            }elseif($query->num_rows==1){
+                if($row = $query->fetch_object()) {
+                    $resultSet=$row;
+                }
+            }else{
+                $resultSet=true;
+            }
+        }else{
+            $resultSet=false;
+        }
+        return $resultSet;
     }
 }
 ?>

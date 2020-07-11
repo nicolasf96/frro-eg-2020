@@ -7,34 +7,30 @@ class UsuariosController extends ControladorBase{
         $this->adapter = $this->conectar->conexion();
     }
     public function index(){
-        if(isset($_SESSION['id'])){
-            $this->view("index",array());
+        if(isset($_SESSION['usuario'])){
+            $vistas = new Vistas($this->adapter);
+            $navbar = $vistas->getNavBar();
+            $this->view("index",array("navbar"=>$navbar));
         }else{
             $this->login();
         }
     }
     public function logout(){
-        $_SESSION['id'] = null;
-        $_SESSION['nombre'] = null;
+        $_SESSION['usuario'] = null;
         $this->index();
     }
     public function login(){
         if(isset($_POST['email'])&&isset($_POST['password'])){
-            $email = $_POST['email'];
-            $password = $_POST['password'];
-            $sql = "SELECT 
-                            * 
-                    FROM usuarios 
-                    WHERE email='$email' AND password='$password'";
             $usuario = new Usuario($this->adapter);
-            $usuarioData = $usuario->ejecutarSql($sql);
+            $usuarioData = $usuario->getBy(
+                array("email","password"),array($_POST['email'],$_POST['password'])
+            );
             if(isset($usuarioData->id)){
-                $_SESSION['id'] = $usuarioData->id;
-                $_SESSION['nombre'] = $usuarioData->nombre;
+                $usuario->setVariables($usuarioData);
+                $_SESSION['usuario'] = $usuario;
                 $this->index();
             }else{
-                $_POST['email']=null;
-                $_POST['password']=null;
+                $_SESSION['usuario'] = null;
                 $this->view("login",array("error"=>1));
             }
         }else{

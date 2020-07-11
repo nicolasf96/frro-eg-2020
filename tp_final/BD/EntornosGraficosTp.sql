@@ -14,14 +14,15 @@ CREATE TABLE usuarios(
 );
 CREATE TABLE vistas(
 	id INT PRIMARY KEY AUTO_INCREMENT,
-    acceso VARCHAR(255)
+    nombre VARCHAR(255),
+    tipo VARCHAR(50),
+    controller VARCHAR(255),
+    accion VARCHAR(255)
 );
 CREATE TABLE vistas_usuarios(
 	id INT PRIMARY KEY AUTO_INCREMENT,
     tipo_id INT,
-    vista_id INT,
-    lec int,
-    esc int
+    vista_id INT
 );
 CREATE TABLE pps(
 	id INT PRIMARY KEY AUTO_INCREMENT,
